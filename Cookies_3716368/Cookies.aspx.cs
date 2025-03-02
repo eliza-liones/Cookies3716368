@@ -11,24 +11,25 @@ namespace Cookies_3716368
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            // Retrieve the cookies.
+            ddlCategory.SelectedValue = Request.Cookies["ddlCategory"].Value;
+            ddlSupplier.SelectedValue = Request.Cookies["ddlSupplier"].Value;
+            lblProduct.Text = Request.Cookies["strProduct"].Value;
+            txtDescription.Text = Request.Cookies["strDescription"].Value;
+            lblImage.Text = Request.Cookies["strImage"].Value;
+            Decimal decPrice = Convert.ToDecimal(Request.Cookies["decPrice"].Value);
+            lblPrice.Text = decPrice.ToString("c");
+            lblNumberInStock.Text = Request.Cookies["bytNumberInStock"].Value;
+            lblNumberOnOrder.Text = Request.Cookies["bytNumberOnOrder"].Value;
+            lblReorderLevel.Text = Request.Cookies["bytReorderLevel"].Value;
 
-		}
-
-        protected void btnConfirm_Click(object sender, EventArgs e)
-        {
-            // Save the cookies.
-            Response.Cookies["ddlCategory"].Value = ddlCategory.SelectedValue;
-            Response.Cookies["ddlSupplier"].Value = ddlSupplier.SelectedValue;
-            Response.Cookies["strProduct"].Value = txtProduct.Text;
-            Response.Cookies["strDescription"].Value = txtDescription.Text;
-            Response.Cookies["strImage"].Value = txtImagen.Text;
-            Response.Cookies["decPrice"].Value = txtPrice.Text;
-            Response.Cookies["bytNumberInStock"].Value = txtNumberInStock.Text;
-            Response.Cookies["bytNumberOnOrder"].Value = txtNumberOnOrder.Text;
-            Response.Cookies["bytReorderLevel"].Value = txtReorderLevel.Text;
-
-            // Go to the confirmation page.
-            Response.Redirect("ProductConfirmCookies.aspx");
+            // Compute and display the value in stock and the value on order.
+            Byte bytNumberInStock = Convert.ToByte(Request.Cookies["bytNumberInStock"].Value);
+            Byte bytNumberOnOrder = Convert.ToByte(Request.Cookies["bytNumberOnOrder"].Value);
+            Decimal decValueInStock = decPrice * bytNumberInStock;
+            Decimal decValueOnOrder = decPrice * bytNumberOnOrder;
+            lblValueInStock.Text = decValueInStock.ToString("c");
+            lblValueOnOrder.Text = decValueOnOrder.ToString("c");
         }
     }
     

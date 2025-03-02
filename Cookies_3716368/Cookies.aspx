@@ -36,7 +36,7 @@
                 
                 <p>
                 <asp:Label ID="Label3" runat="server" Text="Product:"></asp:Label>
-                <asp:TextBox ID="txtProduct" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblProduct" runat="server" Text="Label"></asp:Label>
                 </p>
                 
                 <p>
@@ -46,31 +46,35 @@
 
                 <p>
                 <asp:Label ID="Label5" runat="server" Text="Image:"></asp:Label>
-                <asp:TextBox ID="txtImagen" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblImage" runat="server" Text="Label"></asp:Label>
                 </p>
 
                 <p>
                 <asp:Label ID="label22" runat="server" Text="Price:"></asp:Label>
-                <asp:TextBox ID="txtPrice" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblPrice" runat="server" Text="Label"></asp:Label>
                 </p>
 
                 <p>
                 <asp:Label ID="Label7" runat="server" Text="Number in Stock:"></asp:Label>
-                <asp:TextBox ID="txtNumberInStock" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblNumberInStock" runat="server" Text="Label"></asp:Label>
                 </p>
 
                 <p>
                 <asp:Label ID="Label8" runat="server" Text="Number on Order:"></asp:Label>
-                <asp:TextBox ID="txtNumberOnOrder" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblNumberOnOrder" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lblValueInStock" runat="server" Text="Label"></asp:Label>
                 </p>
 
                 <p>
                 <asp:Label ID="Label9" runat="server" Text="Nivel de Reorden:"></asp:Label>
-                <asp:TextBox ID="txtReorderLevel" runat="server"></asp:TextBox>
+                    <asp:Label ID="lblReorderLevel" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="lblValueOnOrder" runat="server" Text="Label"></asp:Label>
                 </p>
 
+                <asp:Button ID="btnSave" runat="server" Text="Save" />
+                <asp:Button ID="btnBack" runat="server" Text="Back" />
+                
 
-                <asp:Button ID="btnConfirm" runat="server" Text="Confirm" OnClick="btnConfirm_Click" />
                 </asp:Panel>
         </div>
     </form>
